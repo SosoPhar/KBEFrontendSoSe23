@@ -1,0 +1,40 @@
+.login {
+    background: linear-gradient(-45deg, #014dbf, #d5c323, #ee7752, #e7503c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+.loginForm {
+    height: 80%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.loginDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.loginFormButtons {
+    padding-top: 30px;
+}
+
+.login-error-response {
+    color: red;
+    font-size: 0.5rem;
+}

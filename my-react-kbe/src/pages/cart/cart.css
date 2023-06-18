@@ -11,13 +11,17 @@
     display: flex;
 
     align-items: center;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 3px 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     margin: 30px;
 }
 
 .cartItem img {
-    width: 200px;
+    width: 150px;
+    box-shadow: 10px 3px 15px rgba(0, 0, 0, 0.2);
+    border: dimgrey;
+    border-radius: 25px;
+    margin: 10px;
 }
 
 .cartItem .description {
@@ -31,13 +35,25 @@
     font-weight: bolder;
 }
 
-.checkout button {
+.continueShoppingButton {
     width: 150px;
     height: 50px;
     background-color: rgb(19, 19, 19);
     color: white;
-    border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     margin: 10px;
     cursor: pointer;
+}
+
+.checkoutButton {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+}
+.checkoutButton:hover{
+    background-color: lightslategray;
 }
