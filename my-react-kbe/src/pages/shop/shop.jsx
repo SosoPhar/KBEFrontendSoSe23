@@ -14,7 +14,6 @@ export const Shop = () => {
                     <Product data={product} />
                 ))}
             </div>
-            <button className={"addToCartButton"}> Add To Cart </button>
         </div>
     );
 };
