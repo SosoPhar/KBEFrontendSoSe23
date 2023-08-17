@@ -4,8 +4,9 @@ import {NavBar} from "./components/NavBar";
 import {Shop} from "./pages/shop/Shop";
 import {Cart} from "./pages/cart/Cart";
 import {ShopContextProvider} from "./context/ShopContext";
-import {Contact} from "./pages/Contact";
+import {Contact} from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
+import Checkout from "./pages/checkout/Checkout";
 function App() {
     return (
         <div className="App">
@@ -18,6 +19,7 @@ function App() {
                             <Route path="/" element={<Shop />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/cart" element={<Cart />} />
+                            <Route path="/checkout" element={<Checkout />} />
                         </Routes>
                     </Router>
                 </ShopContextProvider>
