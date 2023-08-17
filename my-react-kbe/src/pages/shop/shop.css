@@ -1,5 +1,5 @@
 .shopTitle {
-    margin-bottom: 50px ;
+    margin-bottom: 100px ;
     text-align: center;
     font-size: 40px;
 }
@@ -44,7 +44,7 @@
     border: 2px solid rgb(19, 19, 19);
     min-width: 100px;
     padding: 5px 10px 5px;
-    margin-bottom: 30px;
+    margin-bottom: 30%;
     border-radius: 13px;
 }
 
