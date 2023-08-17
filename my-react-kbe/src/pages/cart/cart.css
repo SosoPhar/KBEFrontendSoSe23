@@ -55,5 +55,9 @@
     cursor: pointer;
 }
 .checkoutButton:hover{
+    background-color:  #85e085;
+}
+
+.continueShoppingButton:hover{
     background-color: lightslategray;
 }

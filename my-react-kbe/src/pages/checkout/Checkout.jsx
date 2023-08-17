@@ -49,7 +49,7 @@ const CheckoutPage = () => {
                     className="input-field"
                 />
             </div>
-            <button onClick={handleCheckout} className="checkout-button" onClick={() => navigate("/checkout")}>Checkout</button>
+            <button className="checkout-button" onClick={() => navigate("/checkout")}>Checkout</button>
         </div>
     );
 };

@@ -33,7 +33,7 @@
 }
 
 .checkout-button:hover {
-    background-color: lightslategray;
+    background-color: red;
     color: white;
 }
 
