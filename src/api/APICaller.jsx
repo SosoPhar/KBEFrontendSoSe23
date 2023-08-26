@@ -35,8 +35,11 @@ function createApiUrl(base_url=BASE_URL, endpoint, pathVariable=null, requestPar
     let str = base_url + endpoint + (pathVariable ? pathVariable : ""); 
 
     if(requestParams) {
-        str += "?";
+        //str += "?";
         for(let i = 0; i < requestParams.length; i++) {
+            if(i===0) {
+                str += "?";
+            }
             str = str + requestParams[0].join("=");
             if(i+1 < requestParams.length) {
                 str = str + "&"; 
@@ -79,6 +82,14 @@ async function apiCall(apiUrl="", method = GET, body = null) {
 
 
 
+export async function getOneProduct(id) {
+    const apiUrl = createApiUrl(undefined, PRODUCT_URL, id); 
+    console.log(apiUrl);
+
+    const apiData = await apiCall(apiUrl);
+    console.log(apiData);
+    return apiData;
+}
 
 export async function getAllProducts() {
     const apiUrl = createApiUrl(undefined, PRODUCT_URL); 
@@ -89,20 +100,61 @@ export async function getAllProducts() {
     return apiData; 
 }
 
-export async function getOneProduct(id) {
-    const apiUrl = createApiUrl(undefined, PRODUCT_URL, id); 
-    console.log(apiUrl);
 
-    const apiData = await apiCall(apiUrl);
-    console.log(apiData);
-    return apiData;
+export async function createProduct(product) {
+    const apiUrl = createApiUrl(undefined, PRODUCT_URL);
+    console.log("create " + apiUrl);
+
+    const apiData = await apiCall(apiUrl, POST, product); 
+    console.log(apiData); 
+    return apiData; 
 }
 
 export async function deleteOneProduct(id) {
     //const apiUrl = createApiUrl({ endpoint: product_url }, { pathVariable: Number(id) }); 
     const apiUrl = createApiUrl(undefined, PRODUCT_URL, Number(id), undefined); 
+    console.log("del " + apiUrl);
 
     const apiData = await apiCall(apiUrl, DELETE);
+    console.log(apiData); 
+
+    return apiData; 
+}
+
+// todo delete All Products by User / Filter / anything like that? 
+
+
+
+export async function updateProduct(id, requestParams) {
+    console.log("update " + apiUrl);
+
+    // requestParams = [["varname": "value"], [...], ...]
+    const apiUrl = createApiUrl(undefined, PRODUCT_URL, id, requestParams); 
+
+    const apiData = await apiCall(apiUrl, PUT);
+    console.log(apiData); 
+
+    return apiData; 
+}
+
+
+export async function getImage(prompt) {
+    const apiUrl = createApiUrl(undefined, PEXELS_URL, prompt); 
+    console.log("getim " + apiUrl);
+
+    const apiData = await apiCall(apiUrl); 
+    console.log(apiData); 
+
+    return apiData; 
+}
+
+
+export async function getRandomImage() {
+    const apiUrl = createApiUrl(undefined, PEXELS_URL); 
+    console.log("getran " + apiUrl);
+
+    const apiData = await apiCall(apiUrl); 
+    console.log(apiData); 
 
     return apiData; 
 }

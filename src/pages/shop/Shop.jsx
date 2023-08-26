@@ -5,7 +5,7 @@ import "./shop.css";
 
 import {useEffect, useState } from "react";
 
-import { getAllProducts, getOneProduct } from "../../api/APICaller";
+import { getAllProducts, getOneProduct, getRandomImage } from "../../api/APICaller";
 
 //todo -> load products with hook? useEffect? 
 
@@ -71,8 +71,10 @@ export const Shop = () => {
             console.error(error); 
         }  */
 
-        console.log(getAllProducts());
-        console.log(getOneProduct(2));
+        //console.log(getAllProducts());
+        //console.log(getOneProduct(2));
+        console.log(getRandomImage());
+        PRODUCTS.
 
     }, [])
 
