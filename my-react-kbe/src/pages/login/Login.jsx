@@ -1,28 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Keycloak from 'keycloak-js';
 import './login.css';
+
 const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
-    const handleLogin = () => {
-        // Replace this with your actual login logic
-        if (username === 'user' && password === 'password') {
+    // Initialize Keycloak instance
+    const keycloak = new Keycloak({
+        url: 'http://localhost:8080', // Keycloak server URL
+        realm: 'ArtShopRealm',
+        clientId: 'art-shop-app',
+    });
+
+    useEffect(() => {
+        // Check if Keycloak is already initialized
+        if (keycloak.authenticated) {
             setLoggedIn(true);
         } else {
-            alert('Please try again, maybe check your spelling');
+            // Initialize Keycloak
+            keycloak
+                .init({ onLoad: 'login-required' })
+                .then((authenticated) => {
+                    setLoggedIn(authenticated);
+                })
+                .catch((error) => {
+                    console.error('Keycloak initialization error:', error);
+                });
         }
-    };
+    }, []);
 
+    // Handle logout using Keycloak
     const handleLogout = () => {
-        setLoggedIn(false);
+        keycloak.logout();
     };
 
     if (loggedIn) {
         return (
             <div className="login-container">
-                <h1 className="welcome-message">Welcome, {username}!</h1>
-                <button onClick={handleLogout} className="logout-button">Logout</button>
+                <h1 className="welcome-message">Welcome, {keycloak.tokenParsed.preferred_username}!</h1>
+                <button onClick={handleLogout} className="logout-button">
+                    Logout
+                </button>
             </div>
         );
     }
@@ -30,23 +48,7 @@ const LoginPage = () => {
     return (
         <div className="login-container">
             <h1 className="login-title">Login Page</h1>
-            <div className="input-container">
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="input-field"
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="input-field"
-                />
-            </div>
-            <button onClick={handleLogin} className="login-button">Login</button>
+            <p>Please wait while we redirect you to the Keycloak login page...</p>
         </div>
     );
 };
