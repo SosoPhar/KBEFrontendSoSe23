@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Keycloak from 'keycloak-js';
+
 import './login.css';
+import keycloak from "../../keycloak";
 
 const LoginPage = () => {
     const [loggedIn, setLoggedIn] = useState(false);
 
-    // Initialize Keycloak instance
-    const keycloak = new Keycloak({
-        url: 'http://localhost:8080', // Keycloak server URL
-        realm: 'ArtShopRealm',
-        clientId: 'art-shop-app',
-    });
+
 
     useEffect(() => {
         // Check if Keycloak is already initialized
