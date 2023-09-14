@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ShopContext } from '../../context/ShopContext';
 import './shop.css';
+import './popUp.css';
 
 export const Product = (props) => {
     const { id, productName, productDescription, currency, price, productImage } = props.data;
@@ -8,8 +9,13 @@ export const Product = (props) => {
 
     const cartItemCount = cartItems[id] || 0;
 
-    // Define the userRole (assuming it's a string)
-    const userRole = 'none'; // Change this to 'admin' to test admin role, ur guest to see no other button
+    const userRole = 'admin';
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+    };
 
     return (
         <div className="product">
@@ -21,13 +27,27 @@ export const Product = (props) => {
             </div>
 
             {userRole === 'user' && (
-                <button className="userButton">add Picture</button>
+                <button className="AddButton">add Picture</button>
             )}
 
             {userRole === 'admin' && (
                 <div className="adminButtonsContainer">
-                    <button className="adminAddButton">add Picture</button>
+                    {/* Step 3: Add onClick to open the popup */}
+                    <button className="AddButton" onClick={togglePopup}>
+                        Update Picture
+                    </button>
                     <button className="adminDeletButton">delete Picture</button>
+                </div>
+            )}
+
+            {isPopupOpen && (
+                <div className="popup">
+                    <h2>Add Picture</h2>
+                    <input type="text" placeholder="Name Your Art" />
+                    <input type="text" placeholder="Description" />
+                    <input type="number" placeholder="Price" />
+                    <input type="text" placeholder="gernerate random image write down a theme"/>
+                    <button onClick={togglePopup}>Add</button>
                 </div>
             )}
 
