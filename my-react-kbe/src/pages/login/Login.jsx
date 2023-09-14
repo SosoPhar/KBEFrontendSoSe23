@@ -1,31 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import './login.css';
+
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
+    const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const handleLogin = () => {
         // Replace this with your actual login logic
         if (username === 'user' && password === 'password') {
             setLoggedIn(true);
+            navigate('/'); // Redirect to the main page ("/") when logged in
         } else {
             alert('Please try again, maybe check your spelling');
         }
     };
-
-    const handleLogout = () => {
-        setLoggedIn(false);
-    };
-
-    if (loggedIn) {
-        return (
-            <div className="login-container">
-                <h1 className="welcome-message">Welcome, {username}!</h1>
-                <button onClick={handleLogout} className="logout-button">Logout</button>
-            </div>
-        );
-    }
 
     return (
         <div className="login-container">
@@ -46,7 +37,9 @@ const LoginPage = () => {
                     className="input-field"
                 />
             </div>
-            <button onClick={handleLogin} className="login-button">Login</button>
+            <button onClick={handleLogin} className="login-button">
+                Login
+            </button>
         </div>
     );
 };

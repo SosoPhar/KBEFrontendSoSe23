@@ -1,8 +1,9 @@
 .shopTitle {
-    margin-bottom: 100px ;
+    margin-bottom: 10% ;
     text-align: center;
     font-size: 40px;
 }
+
 .products {
     width: 100%;
     height: auto;
@@ -15,7 +16,7 @@
     border-radius: 25px;
     width: 300px;
     height: 350px;
-    margin: 100px;
+    margin: 100px 60% 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +28,7 @@
     box-shadow: 10px 3px 15px rgba(0, 0, 0, 0.2);
     border: dimgrey;
     border-radius: 25px;
-    margin: 10px;
+    margin: 30px 30px 30px;
 }
 
 .product .description {
@@ -44,7 +45,8 @@
     border: 2px solid rgb(19, 19, 19);
     min-width: 100px;
     padding: 5px 10px 5px;
-    margin-bottom: 30%;
+    margin-top: 6%;
+    margin-bottom: 50px;
     border-radius: 13px;
 }
 
@@ -52,4 +54,47 @@
     background-color: lightslategray;
     color: white;
     cursor: pointer;
+}
+
+/* Add styles for user and admin buttons */
+.userButton {
+    background-color: lightblue;
+    border: 2px solid blue;
+    min-width: 100px;
+    padding: 5px 10px 5px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.adminButtonsContainer {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+}
+
+.adminAddButton {
+    background-color: transparent;
+    border: 2px solid rgba(112, 161, 10, 0.91);
+    min-width: 100px;
+    padding: 5px 10px 5px;
+    margin-bottom: 3%;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.adminDeletButton {
+    background-color: transparent;
+    border: 2px solid red;
+    min-width: 100px;
+    padding: 5px 10px 5px;
+    margin-bottom: 3%;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.adminDeletButton:hover {
+    background-color:  red;
+}
+
+.adminAddButton:hover {
+    background-color: rgba(95, 189, 63, 0.7);
 }

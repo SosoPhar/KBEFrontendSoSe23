@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext.jsx";
-import { PRODUCTS } from "../../products";
+import { PRODUCTS } from "../shop/products";
 import { CartItem } from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import "./cart.css";
@@ -39,7 +39,8 @@ export const Cart = () => {
                     </button>
                 </div>
             ) : (
-                <h3 style={{ color:"olivedrab"}}> sadly your shopping cart is empty</h3>
+                <h3 style={{ color:"olivedrab"}}> sadly your shopping cart is empty,
+                    klick the Shop above and add the pictures that you like via the add to cart button. Enjoy</h3>
             )}
         </div>
     );
