@@ -11,7 +11,7 @@ export const useAuth = () => {
     const [user, setUser] = useState({});
     const [isLogin, setLogin] = useState(false);
 
-    // fetch user profile
+
     useEffect(() => {
         if (!isLogin) {
             return;
