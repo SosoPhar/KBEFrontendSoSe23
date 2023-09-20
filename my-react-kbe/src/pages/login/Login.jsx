@@ -9,10 +9,10 @@ const LoginPage = () => {
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const handleLogin = () => {
-        // Replace this with your actual login logic
+        {/* ToDo bitte hier Backend anbinden, IAM Intergartion hier  */}
         if (username === 'user' && password === 'password') {
             setLoggedIn(true);
-            navigate('/'); // Redirect to the main page ("/") when logged in
+            navigate('/');
         } else {
             alert('Please try again, maybe check your spelling');
         }
@@ -40,6 +40,7 @@ const LoginPage = () => {
             <button onClick={handleLogin} className="login-button">
                 Login
             </button>
+            {/* ToDo bitte noch Logout Button umsetzten wenn login geklappt hat */}
         </div>
     );
 };

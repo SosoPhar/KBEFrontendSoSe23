@@ -6,6 +6,8 @@ import product5 from "../../assets/1.jpg"
 import product6 from "../../assets/1.jpg"
 import product7 from "../../assets/1.jpg"
 import product8 from "../../assets/1.jpg"
+{/* ToDo bitte hier Backend anbinden, neues Bild generieren und hinzufügen */}
+
 export const PRODUCTS = [
     {
         id: 1,
