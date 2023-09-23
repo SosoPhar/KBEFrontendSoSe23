@@ -9,7 +9,7 @@ const LoginPage = () => {
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const handleLogin = () => {
-        {/* ToDo bitte hier Backend anbinden, IAM Intergartion hier  */}
+        {/* ToDo Skander bitte hier Backend anbinden, IAM Intergartion hier  */}
         if (username === 'user' && password === 'password') {
             setLoggedIn(true);
             navigate('/');
@@ -40,7 +40,7 @@ const LoginPage = () => {
             <button onClick={handleLogin} className="login-button">
                 Login
             </button>
-            {/* ToDo bitte noch Logout Button umsetzten wenn login geklappt hat */}
+            {/* ToDo Sopha bitte noch Logout Button umsetzten wenn login geklappt hat */}
         </div>
     );
 };

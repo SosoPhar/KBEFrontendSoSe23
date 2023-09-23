@@ -11,7 +11,7 @@ export const Shop = () => {
         setIsPopupOpen(!isPopupOpen);
     };
 
-    const userRole = 'admin';
+    const userRole = 'none';
 
     return (
         <div className="shop">
