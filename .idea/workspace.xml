@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3ef8f43d-02af-4cf0-b958-25cf4f6eb707" name="Changes" comment="- rebase" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2VbXAN3GSfzwu8fRauXjOaaolOe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/home/skander_ayari/home/KBEFrontendSoSe23/my-react-kbe/cypress/e2e",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/skander_ayari/home/KBEFrontendSoSe23/my-react-kbe/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="Push.Settings">
+    <option name="SHOW_DETAILS_PANEL" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my-react-kbe/cypress/e2e" />
+      <recent name="$PROJECT_DIR$/my-react-kbe/cypress" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my-react-kbe/cypress/e2e" />
+      <recent name="$PROJECT_DIR$/my-react-kbe" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.my-react-kbe: Compose Deployment">
+    <configuration name="NavBar Component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/my-react-kbe/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/my-react-kbe" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/my-react-kbe/cypress/e2e/components/NavBar.cy.js" />
+      <test-names>
+        <test-name value="NavBar Component" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="template spec" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/my-react-kbe/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/my-react-kbe" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/my-react-kbe/cypress/e2e/firsttest.cy.js" />
+      <test-names>
+        <test-name value="template spec" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="my-react-kbe: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="my-react-kbe/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/my-react-kbe/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="Docker.my-react-kbe: Compose Deployment" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="Jest.template spec" />
+        <item itemvalue="Jest.NavBar Component" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ef8f43d-02af-4cf0-b958-25cf4f6eb707" name="Changes" comment="" />
+      <created>1695105608369</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695105608369</updated>
+      <workItem from="1695105609755" duration="1623000" />
+      <workItem from="1695130174463" duration="2673000" />
+      <workItem from="1695224456162" duration="1097000" />
+      <workItem from="1695278811570" duration="873000" />
+      <workItem from="1695720131819" duration="2252000" />
+      <workItem from="1695727426364" duration="1066000" />
+      <workItem from="1695736598243" duration="10526000" />
+      <workItem from="1695747401546" duration="312000" />
+    </task>
+    <task id="LOCAL-00001" summary="- refactor NavBar.jsx">
+      <option name="closed" value="true" />
+      <created>1695106758789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695106758789</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- moved from /src">
+      <option name="closed" value="true" />
+      <created>1695106835476</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695106835476</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- rm unnecessary comment">
+      <option name="closed" value="true" />
+      <created>1695130678926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695130678927</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- add cypress config &#10;- add cypress tests for Navbar">
+      <option name="closed" value="true" />
+      <created>1695745192707</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695745192707</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- add cypress dependency">
+      <option name="closed" value="true" />
+      <created>1695745246527</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695745246527</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- refactor NavBar.jsx" />
+    <MESSAGE value="- moved from /src" />
+    <MESSAGE value="- rm unnecessary comment" />
+    <MESSAGE value="- add cypress config &#10;- add cypress tests for Navbar" />
+    <MESSAGE value="- add cypress dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add cypress dependency" />
+  </component>
+</project>
