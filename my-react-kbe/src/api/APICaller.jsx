@@ -76,7 +76,8 @@ async function apiCall(apiUrl="", method = GET, body = null) {
         return data;
     } catch(error) {
         console.error(error);
-        throw error;
+        //todo throw error! but catch in code!
+        //throw error;
     }
 }
 

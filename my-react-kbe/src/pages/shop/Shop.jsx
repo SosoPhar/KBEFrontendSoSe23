@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PRODUCTS } from "./products";
 import { Product } from "./Product";
 import "./shop.css";
 import PopUp from "./PopUp";
 
+
+
+import {getAllProducts} from "./../../api/APICaller"; 
+
+
+
+
+
 export const Shop = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [products, setProducts] = useState([]); 
 
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
 
-    const userRole = 'none';
+
+    useEffect(() => {
+        async function fetchAllProducts() {
+            try {
+                const data = await getAllProducts(); 
+                console.log(data);
+                setProducts(data); 
+            } catch(error) {
+                console.error("")
+            }
+
+        }
+
+        fetchAllProducts(); 
+
+    }, [isPopupOpen]);
+
+
+
+
+    const userRole = 'admin';
 
     return (
         <div className="shop">
@@ -35,7 +64,7 @@ export const Shop = () => {
                 )}
             </div>
             <div className="products">
-                {PRODUCTS.map((product) => (
+                {products.map((product) => (
                     <Product data={product} />
                 ))}
             </div>
