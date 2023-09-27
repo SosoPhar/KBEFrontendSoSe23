@@ -19,7 +19,10 @@ function App() {
                 <BrowserRouter>
                     <NavBar isLogin={isLogin} userData={user} login={login} logout={logout}/>
                     <Routes>
-                        <Route path="/" element={<Shop />} />
+                        <Route path="/" element={
+                                <Shop isLogin={isLogin} userData={user} />
+                            }
+                        />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/checkout" element={<Checkout />} />
