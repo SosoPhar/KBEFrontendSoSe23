@@ -24,8 +24,6 @@ export const NavBar = ({isLogin, userData, login, logout}) => {
                         <span className="cart-item-count">{totalCartItems}</span>
                     )}
                 </Link>
-                <Link to="/secured"> Secured Page </Link>
-
                 <div className="hover:text-gray-200">
                     {!isLogin && (
                         <Link to="/login" onClick={login}>
