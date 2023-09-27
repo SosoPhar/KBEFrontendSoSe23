@@ -4,12 +4,12 @@ import './shop.css';
 import './popUp.css';
 
 export const Product = (props) => {
+    const { isLogin, userData } = props;
+
     const { id, productName, productDescription, price, productImage } = props.data;
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id] || 0;
-
-    // Skander Assuming you have a userRole variable to determine the user's role
-    const userRole = 'none'; // Replace with your actual user role check
+    const isAdmin = isLogin && userData?.username?.includes('admin');
 
     return (
         <div className="product">
@@ -19,10 +19,11 @@ export const Product = (props) => {
                 <p>{productDescription}</p>
                 <p><b>{price}</b></p>
 
-                {/* Skander Conditionally render the "Delete" button for admin users */}
-                {userRole === 'admin' && (
-                    <button className="adminDeletButton">Delete Picture</button>
-                    // ToDo: Skander Add functionality to delete the picture when the button is clicked
+                {/* Conditionally render the "Delete" button for admin users */}
+                {isAdmin && (
+                    <button className="addToCartButton">
+                        Delete Cart
+                    </button>
                 )}
             </div>
 
