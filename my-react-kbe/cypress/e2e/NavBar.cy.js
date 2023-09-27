@@ -1,7 +1,6 @@
 describe('NavBar Component', () => {
     beforeEach(() => {
-        // Visit the home page where the NavBar component is located
-        cy.visit('http://localhost:3000/'); // Replace '/' with the actual URL or route to your home page
+        cy.visit('http://localhost:3000/');
     });
 
     it('displays the Shop link', () => {
@@ -25,7 +24,7 @@ describe('NavBar Component', () => {
     it('displays the Cart link', () => {
         cy.get('a[href="/cart"]').click();
         cy.url().should('include', '/cart');
-        cy.get('h1').should('contain', 'Your Cart Items'); // Assuming the page has a heading
+        cy.get('h1').should('contain', 'Your Cart Items');
     });
 
     it('navigates to the Cart page when Cart link is clicked', () => {
