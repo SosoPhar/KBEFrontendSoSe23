@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCart, User } from "phosphor-react";
+import {ShoppingCart, SignOut, User} from "phosphor-react";
 import { ShopContext } from "../context/ShopContext"; // Import your ShopContext
 
 import "./navbar.css";
@@ -34,7 +34,12 @@ export const NavBar = ({isLogin, userData, login, logout}) => {
                     )}
                     {isLogin && (
                         <button type="button" className="text-blue-800" onClick={logout}>
-                            Logout {`${userData?.firstName} ${userData?.lastName}`}
+                            <div>
+                                <SignOut size={32} />
+                                <span style={{ marginBottom: '-55px' }}>
+                                {`${userData?.firstName} ${userData?.lastName}`}
+                                </span>
+                            </div>
                         </button>
                     )}
                 </div>
