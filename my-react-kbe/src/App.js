@@ -4,6 +4,7 @@ import {NavBar} from "./components/NavBar";
 import {Shop} from "./pages/shop/Shop";
 import {Cart} from "./pages/cart/Cart";
 import {ShopContextProvider} from "./context/ShopContext";
+import { APIContextProvider } from "./context/APIContext";
 import {Contact} from "./pages/contact/Contact";
 import Login from "./pages/login/Login";
 import Checkout from "./pages/checkout/Checkout";
@@ -11,6 +12,7 @@ function App() {
     return (
         <div className="App">
             <div className="App">
+                <APIContextProvider>
                 <ShopContextProvider>
                     <Router>
                         <NavBar />
@@ -23,6 +25,7 @@ function App() {
                         </Routes>
                     </Router>
                 </ShopContextProvider>
+                </APIContextProvider>
             </div>
         </div>
     );

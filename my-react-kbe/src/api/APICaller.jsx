@@ -10,27 +10,6 @@ const PUT = "PUT";
 const POST = "POST";
 
 
-/*const [apiData, setApiData] = useState(null);
-    useEffect(() => {
-        //fetch(apiUrl, { mode : "no-cors"})
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Fehler beim API-Aufruf");
-                }
-                return response.json();
-            })
-            .then(data => {
-                setApiData(data);
-                console.log(data);
-            })
-            .catch(error => {
-                console.error(error); 
-            });
-    }, []);*/
-
-
-
 function createApiUrl(base_url=BASE_URL, endpoint, pathVariable=null, requestParams=[]) {
     let str = base_url + endpoint + (pathVariable ? pathVariable : ""); 
 
@@ -50,11 +29,7 @@ function createApiUrl(base_url=BASE_URL, endpoint, pathVariable=null, requestPar
     return str; 
 }
 
-
-
 async function apiCall(apiUrl="", method = GET, body = null) {
-    
-
     try {
 
         //set requestOptions, including headers and body
@@ -83,7 +58,7 @@ async function apiCall(apiUrl="", method = GET, body = null) {
 
 
 
-export async function getOneProduct(id) {
+export async function getProduct(id) {
     const apiUrl = createApiUrl(undefined, PRODUCT_URL, id); 
     console.log(apiUrl);
 
@@ -111,7 +86,7 @@ export async function createProduct(product) {
     return apiData; 
 }
 
-export async function deleteOneProduct(id) {
+export async function deleteProduct(id) {
     //const apiUrl = createApiUrl({ endpoint: product_url }, { pathVariable: Number(id) }); 
     const apiUrl = createApiUrl(undefined, PRODUCT_URL, Number(id), undefined); 
     console.log("del " + apiUrl);

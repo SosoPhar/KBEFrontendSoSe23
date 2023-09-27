@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { PRODUCTS } from "./products";
+import React, { useContext, useEffect, useState } from "react";
+//import { PRODUCTS } from "./products";
 import { Product } from "./Product";
 import "./shop.css";
 import PopUp from "./PopUp";
 
+import { APIContext } from "../../context/APIContext";
 
-
-import {getAllProducts} from "./../../api/APICaller"; 
+//import {getAllProducts} from "./../../api/APICaller"; 
 
 
 
@@ -14,13 +14,20 @@ import {getAllProducts} from "./../../api/APICaller";
 
 export const Shop = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [products, setProducts] = useState([]); 
+
+
+    const {products, fetchAllProducts, ping} = useContext(APIContext);
 
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
 
 
+    useEffect(() => {
+        fetchAllProducts();
+    }, [ping, isPopupOpen]);
+
+    /*
     useEffect(() => {
         async function fetchAllProducts() {
             try {
@@ -35,7 +42,7 @@ export const Shop = () => {
 
         fetchAllProducts(); 
 
-    }, [isPopupOpen]);
+    }, [isPopupOpen]);*/
 
 
 

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./popUp.css";
 import CloseIcon from '../../components/CloseIcon';
 import staticImage from "../../assets/1.jpg"
 
 import { createProduct, getImage } from "../../api/APICaller";
 
+import { APIContext } from "../../context/APIContext";
 
 
 
@@ -17,6 +18,8 @@ const PopUp = ({ togglePopup }) => {
    
     const [imagePrompt, setImagePrompt] = useState(""); 
     
+    const {createOneProduct} = useContext(APIContext);
+
 
     
     const fetchImage = async () => {
@@ -28,22 +31,18 @@ const PopUp = ({ togglePopup }) => {
         }
     };
 
-
     
     async function closeAndAdd() {
-        togglePopup(); 
-        //let image = await fetchImage()
-        //console.log("image: " + image);
+        
         let productToBeCreated = {
-            //id: 10,
             name: name,
             description: description,
             price: price,
             image: await fetchImage(),
         }
         console.log(productToBeCreated)
-        createProduct(productToBeCreated); 
-        
+        await createOneProduct(productToBeCreated); 
+        togglePopup();  
     }
     
 

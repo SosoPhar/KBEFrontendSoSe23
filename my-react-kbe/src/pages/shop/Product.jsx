@@ -1,13 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../../context/ShopContext';
 import './shop.css';
 import './popUp.css';
+
+import { APIContext } from '../../context/APIContext';
+
 
 export const Product = (props) => {
     const { id, name, description, price, image } = props.data;
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id] || 0;
 
+
+    
+
+    const {deleteOneProduct} = useContext(APIContext);
+
+   
     // Skander Assuming you have a userRole variable to determine the user's role
     const userRole = 'admin'; // Replace with your actual user role check
 
@@ -21,7 +30,7 @@ export const Product = (props) => {
 
                 {/* Skander Conditionally render the "Delete" button for admin users */}
                 {userRole === 'admin' && (
-                    <button className="adminDeletButton">Delete Picture</button>
+                    <button className="adminDeletButton" onClick={() => deleteOneProduct(id)}>Delete Picture</button>
                     // ToDo: Skander Add functionality to delete the picture when the button is clicked
                 )}
             </div>
