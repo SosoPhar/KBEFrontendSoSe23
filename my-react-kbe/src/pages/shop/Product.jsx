@@ -20,9 +20,7 @@ export const Product = (props) => {
                 <p><b>{price}</b></p>
 
                 {isAdmin && (
-                    <button className="addToCartButton" onClick={() => removeFromCart(id)}>
-                        Delete From Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
-                    </button>
+                    <button className="adminDeletButton">Delete Picture</button>
                 )}
             </div>
 
