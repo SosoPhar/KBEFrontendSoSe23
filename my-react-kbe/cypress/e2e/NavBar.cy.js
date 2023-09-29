@@ -47,7 +47,6 @@ describe('NavBar Component', () => {
     it('navigates to the login page when the Login button is clicked', () => {
         cy.get('a[href="/login"]').click();
 
-        // Assert that the URL contains the expected components
         cy.url().should('include', '/realms/Art-Shop/protocol/openid-connect/auth');
         cy.url().should('include', 'client_id=my-client');
         cy.url().should('include', 'redirect_uri=http%3A%2F%2Flocalhost%3A3000');
