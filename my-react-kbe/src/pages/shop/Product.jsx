@@ -7,7 +7,7 @@ export const Product = (props) => {
     const { isLogin, userData } = props;
 
     const { id, productName, productDescription, price, productImage } = props.data;
-    const { addToCart,removeFromCart, cartItems } = useContext(ShopContext);
+    const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id] || 0;
     const isAdmin = isLogin && userData?.username?.includes('admin');
 
@@ -20,9 +20,7 @@ export const Product = (props) => {
                 <p><b>{price}</b></p>
 
                 {isAdmin && (
-                    <button className="addToCartButton" onClick={() => removeFromCart(id)}>
-                        Delete From Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
-                    </button>
+                    <button className="adminDeletButton">Delete Picture</button>
                 )}
             </div>
 

@@ -11,13 +11,12 @@ export const Shop = ({ isLogin, userData }) => {
         setIsPopupOpen(!isPopupOpen);
     };
 
-     const isAdmin = isLogin && userData?.username?.includes('admin');
 
     return (
         <div className="shop">
             <div className="shopTitle">
                 <h1>Your ArtLOVE</h1>
-                {isAdmin && (
+                {isLogin && (
                     <div className="adminButtonsContainer">
                         <button className="AddButton" onClick={togglePopup}>
                             Add Picture

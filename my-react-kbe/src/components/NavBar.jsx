@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {ShoppingCart, SignOut, User} from "phosphor-react";
 import { ShopContext } from "../context/ShopContext"; // Import your ShopContext
-
 import "./navbar.css";
 
 export const NavBar = ({isLogin, userData, login, logout}) => {
