@@ -17,7 +17,7 @@ describe('App Component', () => {
     it('navigates to the Contact page', () => {
         cy.get('a[href="/contact"]').click();
         cy.url().should('include', '/contact');
-        cy.wait(2000); // Adjust the wait time as needed
+        cy.wait(2000);
         cy.get('a[href="/contact"]').should('contain', 'Contact');
     });
 
