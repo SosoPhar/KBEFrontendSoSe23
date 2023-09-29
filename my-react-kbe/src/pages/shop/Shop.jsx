@@ -22,29 +22,9 @@ export const Shop = () => {
         setIsPopupOpen(!isPopupOpen);
     };
 
-
     useEffect(() => {
         fetchAllProducts();
     }, [ping, isPopupOpen]);
-
-    /*
-    useEffect(() => {
-        async function fetchAllProducts() {
-            try {
-                const data = await getAllProducts(); 
-                console.log(data);
-                setProducts(data); 
-            } catch(error) {
-                console.error("")
-            }
-
-        }
-
-        fetchAllProducts(); 
-
-    }, [isPopupOpen]);*/
-
-
 
 
     const userRole = 'admin';

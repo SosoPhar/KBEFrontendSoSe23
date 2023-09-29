@@ -1,19 +1,24 @@
-import { createContext, useEffect, useState } from "react";
-import { PRODUCTS } from "../pages/shop/products";
+import { createContext, useEffect, useState, useContext } from "react";
+//import { PRODUCTS } from "../pages/shop/products";
+import { APIContext } from "./APIContext";
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < PRODUCTS.length + 1; i++) {
-        cart[i] = 0;
-    }
-    return cart;
-};
+
 
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const {products} = useContext(APIContext);
+    const [PRODUCTS, setProds] = useState(products);
 
+    const getDefaultCart = () => {
+        let cart = {};
+        for (let i = 1; i < PRODUCTS.length + 1; i++) {
+            cart[i] = 0;
+        }
+        return cart;
+    };
+
+    const [cartItems, setCartItems] = useState(getDefaultCart());
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
