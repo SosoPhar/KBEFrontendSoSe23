@@ -1,31 +1,33 @@
 import { createContext, useEffect, useState, useContext } from "react";
-//import { PRODUCTS } from "../pages/shop/products";
+import { PRODUCTS } from "../pages/shop/products";
 import { APIContext } from "./APIContext";
 
 export const ShopContext = createContext(null);
 
-
+const getDefaultCart = (products) => {
+    let cart = {};
+    for (const product in products) {
+        cart[product.id] = 0;
+    }
+    return cart;
+};
 
 export const ShopContextProvider = (props) => {
     const {products} = useContext(APIContext);
-    const [PRODUCTS, setProds] = useState(products);
 
-    const getDefaultCart = () => {
-        let cart = {};
-        for (let i = 1; i < PRODUCTS.length + 1; i++) {
-            cart[i] = 0;
-        }
-        return cart;
-    };
+    const [cartItems, setCartItems] = useState(getDefaultCart(products));
 
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    console.log(getDefaultCart(products));
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
-        for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-                totalAmount += cartItems[item] * itemInfo.price;
+        for (const key in cartItems) {
+            if (cartItems[key] > 0) {
+                let itemInfo = products.find((product) => product.id === key);
+                console.log("item info")
+                console.log(itemInfo);
+
+                totalAmount += cartItems[key] * itemInfo.price;
             }
         }
         return totalAmount;
@@ -44,7 +46,7 @@ export const ShopContextProvider = (props) => {
     };
 
     const checkout = () => {
-        setCartItems(getDefaultCart());
+        setCartItems(getDefaultCart(products));
     };
 
     const contextValue = {
@@ -56,7 +58,6 @@ export const ShopContextProvider = (props) => {
         checkout,
     };
 
-    
     
 
     return (

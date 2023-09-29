@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext.jsx";
-import { PRODUCTS } from "../shop/products";
+//import { PRODUCTS } from "../shop/products";
 import { CartItem } from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import "./cart.css";
+import { APIContext } from "../../context/APIContext.jsx";
 
 export const Cart = () => {
     const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
+
+    const {products} = useContext(APIContext);
+
     const totalAmount = getTotalCartAmount();
 
     const navigate = useNavigate();
@@ -17,7 +21,7 @@ export const Cart = () => {
                 <h1>Your Cart Items</h1>
             </div>
             <div className="cart">
-                {PRODUCTS.map((product) => {
+                {products.map((product) => {
                     if (cartItems[product.id] !== 0) {
                         return <CartItem data={product} />;
                     }
