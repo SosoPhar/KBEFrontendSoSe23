@@ -11,14 +11,12 @@ export const Product = (props) => {
     const { addToCart, cartItems } = useContext(ShopContext);
     const cartItemCount = cartItems[id] || 0;
 
-
-    
-
     const {deleteOneProduct} = useContext(APIContext);
+  
+    const { isLogin, userData } = props;
 
-   
-    // Skander Assuming you have a userRole variable to determine the user's role
-    const userRole = 'admin'; // Replace with your actual user role check
+
+    const isAdmin = isLogin && userData?.username?.includes('admin');
 
     return (
         <div className="product">
@@ -28,10 +26,8 @@ export const Product = (props) => {
                 <p>{description}</p>
                 <p><b>${price}</b></p>
 
-                {/* Skander Conditionally render the "Delete" button for admin users */}
-                {userRole === 'admin' && (
+                {isAdmin && (
                     <button className="adminDeletButton" onClick={() => deleteOneProduct(id)}>Delete Picture</button>
-                    // ToDo: Skander Add functionality to delete the picture when the button is clicked
                 )}
             </div>
 
