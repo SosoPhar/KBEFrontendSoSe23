@@ -25,14 +25,14 @@ export const NavBar = ({isLogin, userData, login, logout}) => {
                         </Link>
                     )}
                     {isLogin && (
-                        <button type="button" className="text-blue-800" onClick={logout}>
+                        <a type="button" className="text-blue-800" onClick={logout}>
                             <div>
                                 <SignOut size={32} />
                                 <span style={{ marginBottom: '-55px' }}>
-                                {`${userData?.firstName} ${userData?.lastName}`}
+                                {`${userData?.firstName}`}
                                 </span>
                             </div>
-                        </button>
+                        </a>
                     )}
                 </div>
                 <Link to="/cart">
